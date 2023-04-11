@@ -1,4 +1,5 @@
 import resolve from "@rollup/plugin-node-resolve";
+import terser from "@rollup/plugin-terser";
 import riot from "rollup-plugin-riot";
 
 export default {
@@ -7,5 +8,5 @@ export default {
 		file: "public/js/main.js",
 		format: "es"
 	},
-	plugins: [resolve(), riot()]
+	plugins: [resolve(), riot(), terser()]
 };
