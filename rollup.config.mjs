@@ -5,7 +5,7 @@ export default {
 	input: "src/main.js",
 	output: {
 		file: "public/js/main.js",
-		format: "cjs"
+		format: "es"
 	},
 	plugins: [resolve(), riot()]
 };

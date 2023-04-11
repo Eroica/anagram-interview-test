@@ -1,0 +1,65 @@
+<app>
+	<h1>Anagram tester</h1>
+
+	<p>This form checks whether for 2 given words, one of them is an anagram of the other.</p>
+
+	<p>For this test, an anagram is only valid if and only if it was created by permutation, i.e. both words must have the same amount of letters.</p>
+
+	<form class="form" onsubmit="{ checkIsAnagram }">
+		<label><input type="checkbox" checked="{ state.isCaseInsensitive }" oninput="{ onSetCase }"> Check words case-insensitively</label>
+		<input oninput="{ onInputWord1 }" value="{ state.word1 }" />
+		<input oninput="{ onInputWord2 }" value="{ state.word2 }" />
+	</form>
+
+	<div>
+		<p if="{ state.isAnagram }">These 2 words are anagrams of one another!</p>
+		<p if="{ !state.isAnagram }">These 2 words AREN’T anagrams of one another!</p>
+	</div>
+
+	<style>
+		:host { max-width: 600px; }
+
+		.form > * {
+			display: block;
+		}
+		.form > * + * {
+			margin-top: 1em;
+		}
+	</style>
+
+	<script>
+		import checkIsAnagram from "./anagram.js";
+
+		export default {
+			onBeforeMount(props, state) {
+				this.state = {
+					isCaseInsensitive: true,
+					word1: "Word #1",
+					word2: "Word #2",
+					isAnagram: checkIsAnagram("word #1", "Word #2", true)
+				}
+			},
+
+			onSetCase(e) {
+				this.update({
+					isCaseInsensitive: e.target.checked,
+					isAnagram: checkIsAnagram(this.state.word1, this.state.word2, e.target.checked)
+				});
+			},
+
+			onInputWord1(e) {
+				this.update({
+					word1: e.target.value,
+					isAnagram: checkIsAnagram(e.target.value, this.state.word2, this.state.isCaseInsensitive)
+				});
+			},
+
+			onInputWord2(e) {
+				this.update({
+					word2: e.target.value,
+					isAnagram: checkIsAnagram(this.state.word1, e.target.value, this.state.isCaseInsensitive)
+				});
+			}
+		}
+	</script>
+</app>
