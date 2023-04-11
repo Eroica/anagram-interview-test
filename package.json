@@ -7,7 +7,8 @@
     "serve": "^14.2.0"
   },
   "scripts": {
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "serve": "serve"
   },
   "dependencies": {
     "riot": "^7.1.0"
