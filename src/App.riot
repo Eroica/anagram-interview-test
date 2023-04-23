@@ -37,13 +37,13 @@
 		import checkIsAnagram from "./anagram.js";
 
 		export default {
-			onBeforeMount(props, state) {
+			onBeforeMount(props) {
 				this.state = {
-					isCaseInsensitive: true,
-					word1: "Word #1",
-					word2: "Word #2",
-					isAnagram: checkIsAnagram("word #1", "Word #2", true)
-				}
+					isCaseInsensitive: props.isCaseInsensitive,
+					word1: props.word1,
+					word2: props.word2,
+					isAnagram: checkIsAnagram(props.word1, props.word2, props.isCaseInsensitive)
+				};
 			},
 
 			onSetCase(e) {
