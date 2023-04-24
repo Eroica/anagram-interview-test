@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "mocha": "^10.2.0",
+    "rollup": "^3.20.2",
+    "serve": "^14.2.0"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "test": "mocha",
+    "serve": "serve"
+  },
+  "dependencies": {
+    "tko": "^4.0.0-alpha5h"
+  }
+}
