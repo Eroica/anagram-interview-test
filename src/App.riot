@@ -6,7 +6,7 @@
 
 		<p>For this test, an anagram is only valid if and only if it was created by permutation, i.e. both words must have the same amount of letters.</p>
 
-		<form class="form" onsubmit="{ checkIsAnagram }">
+		<form class="form">
 			<label><input type="checkbox" checked="{ state.isCaseInsensitive }" oninput="{ onSetCase }"> Check words case-insensitively</label>
 			<input oninput="{ onInputWord1 }" value="{ state.word1 }" />
 			<input oninput="{ onInputWord2 }" value="{ state.word2 }" />
@@ -24,10 +24,6 @@
 			margin: 0 auto;
 		}
 
-		.form > * {
-			display: block;
-		}
-		.form > * + *,
 		.form + * {
 			margin-top: 1em;
 		}

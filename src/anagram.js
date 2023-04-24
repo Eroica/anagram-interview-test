@@ -6,7 +6,7 @@
  *
  * @param {string} word1 - First word
  * @param {string} word2 - Second word
- * @param {boolean} isCaseInsensitive - Flag to check words in case-insensitive manner (default) or not
+ * @param {boolean} isCaseInsensitive - Flag to check words in case-insensitive manner or not
  * @returns {boolean} `true` if the two given words are anagrams
  */
 export default function checkIsAnagram (word1, word2, isCaseInsensitive) {
@@ -24,7 +24,7 @@ export default function checkIsAnagram (word1, word2, isCaseInsensitive) {
 		/* To allow comparisons like "Lager" and "Regal", act as if all letters were
 		 * entered in lower case. In a more strict version, the case of a letter could be
 		 * taken into account; this might be necessary for languages such as Turkish where
-		 * lower-casing * `I` has locale-dependent results. */
+		 * lower-casing `I` has locale-dependent results. */
 		{ sensitivity: isCaseInsensitive ? "base" : "case" }
 	) === 0;
 }

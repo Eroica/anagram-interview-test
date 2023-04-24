@@ -8,7 +8,7 @@ trim_trailing_whitespace = true
 [*.{js,mjs,riot}]
 indent_style = tab
 indent_size = 4
-max_line_length = 120
+max_line_length = 99
 
 [*.html]
 indent_style = tab
