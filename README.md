@@ -8,7 +8,7 @@ Use `npm run serve` to serve the web app (when inside the corresponding director
 
 I did the first version in Riot.JS on April 11, 2023, and later wanted to compare it to other frameworks.
 
-* `riot`: Implemented in Riot.JS, only ES6 module syntax, using Jest as a test suite; only tests "business logic" part
+* `riot`: Implemented in Riot.JS, full ES6 module, using Jest as a test suite; only tests "business logic" part
 * `tko`: Using TKO (successor of Knockout.JS), "model" part is a CommonJS module using Mocha as a test suite; tests also includes testing the ViewModel
 * `react`: Using React, source files are ES6 modules (but building still requires CommonJS), no test suite (didn't look into it further)
 
@@ -17,7 +17,7 @@ Size comparison of the compiled app (just looking at the size of the _tersed_ ou
 | Framework | Size |
 |:----------|:-----|
 | Riot.JS | 18.1 KB
-| TKO | 181 KB
+| TKO | 125 KB (when using latest version)
 | React | 138 KB (when building `production`)
 
 ### Riot.js
@@ -34,7 +34,7 @@ Size comparison of the compiled app (just looking at the size of the _tersed_ ou
 * ✓ No wiring logic required for input handlers thanks to two-way binding (less code)
 * ✓ _View_ part is plain HTML; can easily be integrated in backends returning static pages
 * ✓ Theoretically, no compilation required (if you don't need minimized output)
-* ? Output file is the largest
+* ? Output file is large
 * ? You need your own setup to scope CSS rules
 * ? Build environment is still a mix of ES/CommonJS modules
 
@@ -43,6 +43,6 @@ Size comparison of the compiled app (just looking at the size of the _tersed_ ou
 * ✓ Built-in scoped CSS support
 * ? _View_ part (JSX) is its own language
 * ? Build setup (at least with Rollup) requires weird "magic" code (`replace({"process.env.NODE_ENV": JSON.stringify("development") })?`)
-* ? Output file is large
+* ? Output file is the largest
 * ? Code can be modules, but building still requires CommonJS plugin
 * ? Testing the component requires additional setup
