@@ -1,4 +1,4 @@
-const ko = require("tko");
+const ko = require("@tko/build.reference").default;
 
 const checkIsAnagram = require("./anagram.js");
 

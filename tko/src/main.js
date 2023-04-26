@@ -1,5 +1,5 @@
-import * as ko from "tko";
+const tko = require("@tko/build.reference").default;
 
-import ViewModel from "./ViewModel.js";
+const ViewModel = require("./ViewModel.js");
 
-ko.applyBindings(new ViewModel("Word 1", "Word 2", true));
+tko.applyBindings(new ViewModel("Word 1", "Word 2", true));

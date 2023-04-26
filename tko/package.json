@@ -13,6 +13,6 @@
     "serve": "serve"
   },
   "dependencies": {
-    "tko": "^4.0.0-alpha5h"
+    "@tko/build.reference": "^4.0.0-beta1.5"
   }
 }
