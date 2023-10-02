@@ -42,25 +42,20 @@
 				};
 			},
 
+			onBeforeUpdate(props, state) {
+				state.isAnagram = checkIsAnagram(state.word1, state.word2, state.isCaseInsensitive);
+			},
+
 			onSetCase(e) {
-				this.update({
-					isCaseInsensitive: e.target.checked,
-					isAnagram: checkIsAnagram(this.state.word1, this.state.word2, e.target.checked)
-				});
+				this.update({isCaseInsensitive: e.target.checked });
 			},
 
 			onInputWord1(e) {
-				this.update({
-					word1: e.target.value,
-					isAnagram: checkIsAnagram(e.target.value, this.state.word2, this.state.isCaseInsensitive)
-				});
+				this.update({word1: e.target.value });
 			},
 
 			onInputWord2(e) {
-				this.update({
-					word2: e.target.value,
-					isAnagram: checkIsAnagram(this.state.word1, e.target.value, this.state.isCaseInsensitive)
-				});
+				this.update({word2: e.target.value });
 			}
 		}
 	</script>
